@@ -8,6 +8,7 @@
 
 - [x] Contúdo estilizado
 - [x] Responisivo
+- [x] Funcional
    
      
 ### 💻 Technologies Used 
