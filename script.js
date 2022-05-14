@@ -99,7 +99,7 @@ function start_time() {
 
         }
 
-    }, 20);
+    }, 1000);
 }
 
 function break_func() {
@@ -171,7 +171,7 @@ function break_func() {
 
         }
 
-    }, 90);
+    }, 1000);
 }
 
 function pause_time() {
