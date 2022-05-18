@@ -176,6 +176,9 @@ function break_func() {
 
 function pause_time() {
     time_section.style.borderColor = "#4f99fa"
+    start_button.innerHTML = "Continue"
+    name_action.innerHTML = "Paused"
+
     clearInterval(interval_var)
     paused = true
 }
