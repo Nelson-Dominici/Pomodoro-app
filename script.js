@@ -1,6 +1,8 @@
 let name_action = document.querySelector("#name_action")
 let time_section = document.querySelector(".time_section")
 
+let som = document.querySelector("#som")
+
 let started = true
 let breaked = false
 let paused = false
@@ -32,6 +34,8 @@ seconds_two_inner.innerHTML = seconds_two.toString()
 
 function start_time() {
     name_action.innerHTML = "Work!"
+    som.src = "som/src_sounds_bell-start.mp3"
+    som.play()
 
     time_section.style.borderColor = "#e63434"
     clearInterval(interval_var)
@@ -104,6 +108,8 @@ function start_time() {
 
 function break_func() {
     clearInterval(interval_var)
+    som.src = "som/src_sounds_bell-finish.mp3"
+    som.play()
     name_action.innerHTML = "Break!"
     time_section.style.borderColor = "#2faf64"
 
