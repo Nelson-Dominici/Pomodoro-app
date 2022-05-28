@@ -20,12 +20,6 @@
 </div>
 
 
-<h3 align="center"><b> 🖥Preview</b></h3>
-
-<p align="center">
-    <img src="pomodoro.gif" width="80%" height="80%">
-</p>
-
     
     
 <h1 align="center"><a href="https://nelson-dominici.github.io/Pomodoro-app/">Teste você Mesmo</a></p></h1>
