@@ -54,131 +54,105 @@ function start_time() {
 
     interval_var = setInterval(() => {
 
-        if (seconds_two == 9) {
-            seconds_two = 0
-            seconds_one++
-
-            seconds_one_inner.innerHTML = seconds_one.toString()
-            seconds_two_inner.innerHTML = seconds_two.toString()
+        if(seconds_one == 0 && seconds_two == 0){
+            seconds_two = 9
+            seconds_one = 5
+            minutes_two--
         }
-        else {
-            seconds_two++
+        else{seconds_two--}
 
-            seconds_one_inner.innerHTML = seconds_one.toString()
-            seconds_two_inner.innerHTML = seconds_two.toString()
+        if(seconds_two < 0 && seconds_one !== 0){
+            seconds_two = 9
+            seconds_one--
         }
 
-        if (seconds_one == 6 && minutes_two !== 10) {
-            seconds_one = 0
-            seconds_two = 0
-
-            minutes_two++
-
-            seconds_two++
-
-            minutes_two_inner.innerHTML = minutes_two.toString()
-
-            seconds_one_inner.innerHTML = seconds_one.toString()
-            seconds_two_inner.innerHTML = seconds_two.toString()
+        if(minutes_two < 0){
+            minutes_two = 9
+            minutes_one--
         }
 
-        if (minutes_two > 9) {
-            minutes_two = 0
-            minutes_one++
+        seconds_one_inner.innerHTML = seconds_one.toString()
+        seconds_two_inner.innerHTML = seconds_two.toString()
 
-            minutes_one_inner.innerHTML = minutes_one.toString()
-            minutes_two_inner.innerHTML = minutes_two.toString()
-        }
-
-        if (minutes_one == 2 && minutes_two == 5) {
-            minutes_one = 0
-            minutes_two = 0
-
-            seconds_one = 0
-            seconds_two = 0
-            started = false
-            breaked = true
-
-            break_func()
-
-        }
-
-    }, 1000);
+        minutes_one_inner.innerHTML = minutes_one.toString()
+        minutes_two_inner.innerHTML = minutes_two.toString()
+    
+    }, 100);
 }
 
-function break_func() {
-    clearInterval(interval_var)
-    som.src = "som/src_sounds_bell-finish.mp3"
-    som.play()
-    name_action.innerHTML = "Break!"
-    time_section.style.borderColor = "#2faf64"
+// function break_func() {
+//     clearInterval(interval_var)
+//     som.src = "som/src_sounds_bell-finish.mp3"
+//     som.play()
+//     name_action.innerHTML = "Break!"
+//     time_section.style.borderColor = "#2faf64"
 
-    breaked = false
-    started = true
+//     breaked = false
+//     started = true
 
-    start_button.innerHTML = "Work"
-    start_button.style.backgroundColor = "#e63434"
+//     start_button.innerHTML = "Work"
+//     start_button.style.backgroundColor = "#e63434"
 
-    minutes_one_inner.innerHTML = minutes_one.toString()
-    minutes_two_inner.innerHTML = minutes_two.toString()
+//     minutes_one_inner.innerHTML = minutes_one.toString()
+//     minutes_two_inner.innerHTML = minutes_two.toString()
 
-    seconds_one_inner.innerHTML = seconds_one.toString()
-    seconds_two_inner.innerHTML = seconds_two.toString()
+//     seconds_one_inner.innerHTML = seconds_one.toString()
+//     seconds_two_inner.innerHTML = seconds_two.toString()
 
-    interval_var = setInterval(() => {
+//     interval_var = setInterval(() => {
 
-        if (seconds_two == 9) {
-            seconds_two = 0
-            seconds_one++
+//         if (seconds_two == 9) {
+//             seconds_two = 0
+//             seconds_one++
 
-            seconds_one_inner.innerHTML = seconds_one.toString()
-            seconds_two_inner.innerHTML = seconds_two.toString()
-        }
-        else {
-            seconds_two++
+//             seconds_one_inner.innerHTML = seconds_one.toString()
+//             seconds_two_inner.innerHTML = seconds_two.toString()
+//         }
+//         else {
+//             seconds_two++
 
-            seconds_one_inner.innerHTML = seconds_one.toString()
-            seconds_two_inner.innerHTML = seconds_two.toString()
-        }
+//             seconds_one_inner.innerHTML = seconds_one.toString()
+//             seconds_two_inner.innerHTML = seconds_two.toString()
+//         }
 
-        if (seconds_one == 6 && minutes_two !== 10) {
-            seconds_one = 0
-            seconds_two = 0
+//         if (seconds_one == 6 && minutes_two !== 10) {
+//             seconds_one = 0
+//             seconds_two = 0
 
-            minutes_two++
+//             minutes_two++
 
-            seconds_two++
+//             seconds_two++
 
-            minutes_two_inner.innerHTML = minutes_two.toString()
+//             minutes_two_inner.innerHTML = minutes_two.toString()
 
-            seconds_one_inner.innerHTML = seconds_one.toString()
-            seconds_two_inner.innerHTML = seconds_two.toString()
-        }
+//             seconds_one_inner.innerHTML = seconds_one.toString()
+//             seconds_two_inner.innerHTML = seconds_two.toString()
+//         }
 
-        if (minutes_two > 9) {
-            minutes_two = 0
-            minutes_one++
+//         if (minutes_two > 9) {
+//             minutes_two = 0
+//             minutes_one++
 
-            minutes_one_inner.innerHTML = minutes_one.toString()
-            minutes_two_inner.innerHTML = minutes_two.toString()
-        }
+//             minutes_one_inner.innerHTML = minutes_one.toString()
+//             minutes_two_inner.innerHTML = minutes_two.toString()
+//         }
 
-        else if (minutes_two == 5) {
-            minutes_one = 0
-            minutes_two = 0
+//         else if (minutes_two == 5) {
+//             minutes_one = 0
+//             minutes_two = 0
 
-            seconds_one = 0
-            seconds_two = 0
+//             seconds_one = 0
+//             seconds_two = 0
 
-            started = true
-            breaked = false
+//             started = true
+//             breaked = false
 
-            start_time()
+//             start_time()
 
-        }
+//         }
 
-    }, 1000);
-}
+//     }, 1000);
+// }
 
 function pause_time() {
     time_section.style.borderColor = "#4f99fa"
@@ -190,12 +164,12 @@ function pause_time() {
 }
 
 start_button.addEventListener("click", () => {
-pause_button.addEventListener("click", pause_time)
+    pause_button.addEventListener("click", pause_time)
 
     if (started == true && paused == false) {
 
-        minutes_one = 0
-        minutes_two = 0
+        minutes_one = 2
+        minutes_two = 5
 
         seconds_one = 0
         seconds_two = 0
@@ -205,7 +179,7 @@ pause_button.addEventListener("click", pause_time)
     else if (started !== true && paused == false) {
 
         minutes_one = 0
-        minutes_two = 0
+        minutes_two = 5
 
         seconds_one = 0
         seconds_two = 0
