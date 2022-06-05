@@ -2,7 +2,7 @@
 <h1 align="center" ><b>Pomodoro app</b></h1><div>
 
 <h1>🚀Sobre</h1>
-    <h2>Um site com um time pomodoro ;-;</h2>
+    <h2>Um site com um tempo pomodoro ;-;</h2>
     
 ### 📋Features
 
